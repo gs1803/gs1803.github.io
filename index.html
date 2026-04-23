@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guhan Sivakumar - Data Scientist & Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a3a52;
+            --secondary-color: #2d5f8d;
+            --accent-color: #00a8e8;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: #e8f4f8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #e8f4f8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Navigation Tabs */
+        .nav-container {
+            background-color: var(--light-bg);
+            border-bottom: 2px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .nav-tabs button {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .nav-tabs button:hover {
+            color: var(--text-dark);
+            background-color: rgba(0, 168, 232, 0.05);
+        }
+
+        .nav-tabs button.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            font-weight: 700;
+        }
+
+        .entry {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0 4px 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        .entry:hover {
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+            transform: translateX(4px);
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .entry-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .entry-subtitle {
+            font-style: italic;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .entry-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            background-color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .entry-description {
+            color: var(--text-dark);
+            margin-top: 0.8rem;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin-top: 0.8rem;
+            margin-left: 0;
+        }
+
+        .bullet-list li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            position: relative;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .bullet-list li:before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .gpa {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-category {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .skill-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background-color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--accent-color);
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Awards Section */
+        .award {
+            background-color: #fffbea;
+            border-left: 4px solid #ffc107;
+            padding: 1rem 1.5rem;
+            border-radius: 0 4px 4px 0;
+            margin-bottom: 1rem;
+        }
+
+        .award-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .award-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .subtitle {
+                font-size: 1rem;
+            }
+
+            .contact-info {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .nav-tabs {
+                gap: 0;
+                padding: 0 0.5rem;
+            }
+
+            .nav-tabs button {
+                padding: 0.8rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .entry-header {
+                flex-direction: column;
+            }
+
+            .entry-date {
+                align-self: flex-start;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .entry-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-container {
+                display: none;
+            }
+
+            .tab-content {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Guhan Sivakumar</h1>
+        <div class="subtitle">Data Scientist & Researcher</div>
+        <div class="contact-info">
+            <div class="contact-item">
+                📧 <a href="mailto:guhans03@gmail.com">guhans03@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                📱 (214) 799-7215
+            </div>
+            <div class="contact-item">
+                📍 Dallas, TX
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/gs1803" target="_blank">GitHub: gs1803</a>
+            <a href="https://linkedin.com/in/guhan-siva" target="_blank">LinkedIn: guhan-siva</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'academic')">Academic</button>
+            <button class="tab-btn" onclick="switchTab(event, 'research')">Research</button>
+            <button class="tab-btn" onclick="switchTab(event, 'work')">Work Experience</button>
+            <button class="tab-btn" onclick="switchTab(event, 'skills')">Skills</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- ACADEMIC TAB -->
+        <div id="academic" class="tab-content active">
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Ph.D. in Operations Research</div>
+                            <div class="entry-subtitle">Virginia Polytechnic Institute</div>
+                        </div>
+                        <div class="entry-date">Aug 2026 – May 2031</div>
+                    </div>
+                    <div class="entry-description">
+                        <p><span class="gpa">GPA: 4.00/4.00</span></p>
+                        <p style="margin-top: 0.5rem;"><strong>Research Interests:</strong> Theoretical Reinforcement Learning, Time Series, Optimization</p>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Optimization I-II, Random Processes, Probability Theory, Dynamic Programming, Bayesian Statistics</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">B.S. Data Science & B.S. Economics</div>
+                            <div class="entry-subtitle">The University of Texas at Dallas</div>
+                        </div>
+                        <div class="entry-date">May 2025</div>
+                    </div>
+                    <div class="entry-description">
+                        <p><span class="gpa">GPA: 3.85/4.00</span></p>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Machine Learning, Probability, Statistical Learning, Real Analysis I, Mathematical Statistics</li>
+                        <li>Game Theory, PhD Econometrics I, PhD Macroeconomics Theory I, Forecasting, Monetary Economics</li>
+                        <li>Big Data, Deep Learning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Awards & Recognition</h2>
+
+                <div class="award">
+                    <div class="award-title">Grado Department Fellowship</div>
+                    <div class="award-date">2026 – Present</div>
+                </div>
+
+                <div class="award">
+                    <div class="award-title">Dean's List (3x)</div>
+                    <div class="award-date">2021 – 2025</div>
+                </div>
+
+                <div class="award">
+                    <div class="award-title">Academic Excellence Scholarship</div>
+                    <div class="award-date">2021 – 2025</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESEARCH TAB -->
+        <div id="research" class="tab-content">
+            <div class="section">
+                <h2 class="section-title">Research Experience</h2>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Graduate Researcher</div>
+                            <div class="entry-subtitle">Virginia Tech, Blacksburg, VA</div>
+                        </div>
+                        <div class="entry-date">Aug 2026 – Present</div>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Undergraduate Researcher</div>
+                            <div class="entry-subtitle">UT Dallas & Drexel University, Richardson, TX</div>
+                        </div>
+                        <div class="entry-date">Jan 2025 – Jun 2025</div>
+                    </div>
+                    <div class="entry-description">
+                        <p><strong>Plasma Event Detection & Time Series Classification</strong></p>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Collaborated with professors and 3 peers to detect high-velocity plasma events from magnetic field structures in Earth's magnetosphere using 60M rows of data from NASA THEMIS Missions</li>
+                        <li>Designed TimeSeqNet, a custom deep learning architecture for time series sequence classification, and engineered features using GARCH volatilities, achieving 84% accuracy with strong generalization</li>
+                        <li>Built scalable, memory-efficient data pipelines using generator functions and vectorization, reducing memory usage by 86%</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Research Assistant</div>
+                            <div class="entry-subtitle">UT Dallas, Richardson, TX</div>
+                        </div>
+                        <div class="entry-date">Sep 2024 – May 2025</div>
+                    </div>
+                    <div class="entry-description">
+                        <p><strong>Corporate Social Responsibility & Causal Analysis</strong></p>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Worked with Dr. June Huang to analyze the causal effect of Corporate Social Responsibility (CSR) announcements as political contributions, using difference-in-differences and fixed effects models</li>
+                        <li>Preprocessed unstructured text data from 197,300 news articles and 86,800 press releases with PySpark for causal analysis</li>
+                        <li>Generated Universal Sentence Encoder embeddings, extracting named entities and dollar amounts in 14% of press releases</li>
+                        <li>Applied TF-IDF and cosine similarity to measure the relevance of local news articles to firm-specific CSR press releases</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Undergraduate Researcher</div>
+                            <div class="entry-subtitle">UT Dallas, Richardson, TX</div>
+                        </div>
+                        <div class="entry-date">Nov 2023 – May 2024</div>
+                    </div>
+                    <div class="entry-description">
+                        <p><strong>CPI Inflation Forecasting with HMM-LSTM Fusion</strong></p>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Created an advanced forecasting model for CPI Inflation by combining an HMM and LSTM model, obtaining an in-sample R² of 0.792 and a MAPE of 13.3% on reliable long-term future forecasts</li>
+                        <li>Conducted in-sample forecasting with forward-chaining cross-validation to validate the model's robustness over time</li>
+                        <li>Enhanced model interpretability with Integrated Gradients for feature importance, and presented the findings in a paper</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Publications & Presentations</h2>
+
+                <div class="entry">
+                    <div class="entry-description">
+                        <p><strong>Sivakumar, G., et al. (2025).</strong> Fast-Ion Flow Event Detection in Earth's Magnetosphere. <em>Poster Presentation - UTDiscovery Day.</em></p>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-description">
+                        <p><strong>Sivakumar, G. (2025).</strong> HMM-LSTM Fusion Model for CPI Inflation Forecasting. <em>arXiv:2501.02002.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WORK EXPERIENCE TAB -->
+        <div id="work" class="tab-content">
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Data Scientist I</div>
+                            <div class="entry-subtitle">AT&T, Dallas, TX</div>
+                        </div>
+                        <div class="entry-date">Jul 2025 – Jul 2026</div>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Designed a gradient boosted dynamic panel revenue forecasting model with CatBoost on 650M+ rows in Databricks, achieving a 12.8% WAPE and identifying $3.12M in annual cost savings</li>
+                        <li>Achieved a 70% WAPE reduction over the existing model in backtests with stable forecasts across several FP&A horizons</li>
+                        <li>Developed a scalable semantic query engine with RAG that translates natural language into SQL, improving data retrieval efficiency by 87% while ensuring SOX compliance and privacy</li>
+                        <li>Optimized SSMS partition refreshes and VM-based job scheduling, saving 20+ hours of monitoring during data migrations</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Data Science Intern</div>
+                            <div class="entry-subtitle">GoFi - DriveTime, Dallas, TX</div>
+                        </div>
+                        <div class="entry-date">May 2024 – Aug 2024</div>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Enhanced pricing programs by expanding customer segments from 2 to 6, enabling targeted risk-based pricing strategies</li>
+                        <li>Reduced feature space from 106 to 38 with hierarchical clustering and created a K-Means model to identify new segments</li>
+                        <li>Designed and optimized a custom Decision Tree from scratch for interpreting K-Means results, obtaining 93.6% accuracy</li>
+                        <li>Improved overall loss expectation accuracy by 15.74% and reduced costs by 8.31%, lowering financial risk exposure</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Data Science Intern</div>
+                            <div class="entry-subtitle">Samirian Chemicals, Remote</div>
+                        </div>
+                        <div class="entry-date">Sep 2022 – Jun 2023</div>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Developed Azure SQL databases from local Excel files with Microsoft Fabric and provisioned ETL data pipelines using Python, PowerQuery, and SQL, integrating with existing dashboards</li>
+                        <li>Analyzed market trends and prices of various chemicals using PowerBI dashboards, boosting sales performance by 12%</li>
+                        <li>Predicted pricing of chemicals with 77% forecast accuracy based on price trends, competitor pricing, and market data</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Graduate Teaching Assistant</div>
+                            <div class="entry-subtitle">Virginia Tech, Blacksburg, VA</div>
+                        </div>
+                        <div class="entry-date">Aug 2026 – May 2028</div>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Interviewer</div>
+                            <div class="entry-subtitle">AT&T, Dallas, TX</div>
+                        </div>
+                        <div class="entry-date">Sep 2025 – May 2026</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILLS TAB -->
+        <div id="skills" class="tab-content">
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Languages & Libraries</h4>
+                        <ul class="skill-list">
+                            <li class="skill-item">Python</li>
+                            <li class="skill-item">R</li>
+                            <li class="skill-item">Java</li>
+                            <li class="skill-item">SQL</li>
+                            <li class="skill-item">TensorFlow</li>
+                            <li class="skill-item">PyTorch</li>
+                            <li class="skill-item">Scikit-learn</li>
+                            <li class="skill-item">Darts</li>
+                            <li class="skill-item">EconML</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Developer Tools</h4>
+                        <ul class="skill-list">
+                            <li class="skill-item">Azure</li>
+                            <li class="skill-item">Docker</li>
+                            <li class="skill-item">Spark</li>
+                            <li class="skill-item">Kafka</li>
+                            <li class="skill-item">Snowflake</li>
+                            <li class="skill-item">MongoDB</li>
+                            <li class="skill-item">MySQL</li>
+                            <li class="skill-item">GitHub</li>
+                            <li class="skill-item">Linux</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Analysis & Visualization</h4>
+                        <ul class="skill-list">
+                            <li class="skill-item">Databricks</li>
+                            <li class="skill-item">SSMS</li>
+                            <li class="skill-item">PowerBI</li>
+                            <li class="skill-item">Microsoft Fabric</li>
+                            <li class="skill-item">Tableau</li>
+                            <li class="skill-item">Excel</li>
+                            <li class="skill-item">PowerQuery</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Methodologies & Domains</h4>
+                        <ul class="skill-list">
+                            <li class="skill-item">Machine Learning</li>
+                            <li class="skill-item">Time Series</li>
+                            <li class="skill-item">Deep Learning</li>
+                            <li class="skill-item">Causal Inference</li>
+                            <li class="skill-item">NLP</li>
+                            <li class="skill-item">Data Pipeline</li>
+                            <li class="skill-item">Optimization</li>
+                            <li class="skill-item">Statistical Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(evt, tabName) {
+            // Hide all tab contents
+            const contents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+
+            // Remove active class from all buttons
+            const buttons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+
+            // Show the current tab content and mark button as active
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

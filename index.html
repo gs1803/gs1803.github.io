@@ -25,32 +25,12 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
-            background-color: #ffffff;
+            background-color: #0f1419;
         }
 
         /* Header Section */
         header {
-            background: white;
-            color: var(--text-dark);
-            padding: 1.5rem 2rem;
-            text-align: center;
-            border-bottom: 2px solid var(--border-color);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.25rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--primary-color);
-        }
-
-        header .subtitle {
-            font-size: 1rem;
-            color: var(--accent-color);
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            display: none;
         }
 
         .contact-info {
@@ -107,13 +87,13 @@
 
         /* Navigation Tabs */
         .nav-container {
-            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(180deg, #1a2332 0%, #141b27 100%);
+            border-bottom: 1px solid rgba(0, 168, 232, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
             backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .nav-tabs {
@@ -143,7 +123,7 @@
             padding: 0.8rem 1.2rem;
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.6);
             cursor: pointer;
             transition: all 0.3s ease;
             border-bottom: 3px solid transparent;
@@ -153,8 +133,9 @@
         }
 
         .nav-tabs button:hover {
-            color: var(--secondary-color);
-            background-color: rgba(0, 168, 232, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(0, 168, 232, 0.1);
+            border-bottom-color: var(--accent-color);
         }
 
         .nav-tabs button.active {
@@ -164,12 +145,12 @@
 
         .nav-tabs button.nav-home {
             font-weight: 700;
-            color: var(--primary-color);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 1rem;
         }
 
         .nav-tabs button.nav-home:hover {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
 
         /* Main Content */
@@ -206,25 +187,28 @@
 
         .section-title {
             font-size: 1.8rem;
-            color: var(--primary-color);
+            color: var(--accent-color);
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 2px solid rgba(0, 168, 232, 0.3);
             font-weight: 700;
         }
 
         .entry {
             margin-bottom: 2rem;
             padding: 1.5rem;
-            background-color: var(--light-bg);
+            background-color: rgba(30, 41, 59, 0.7);
             border-left: 4px solid var(--accent-color);
             border-radius: 0 4px 4px 0;
             transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
         }
 
         .entry:hover {
-            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+            box-shadow: 0 8px 24px rgba(0, 168, 232, 0.15);
             transform: translateX(4px);
+            background-color: rgba(30, 41, 59, 0.9);
         }
 
         .entry-header {
@@ -239,26 +223,26 @@
         .entry-title {
             font-size: 1.3rem;
             font-weight: 700;
-            color: var(--text-dark);
+            color: rgba(255, 255, 255, 0.95);
         }
 
         .entry-subtitle {
             font-style: italic;
-            color: var(--secondary-color);
+            color: rgba(0, 212, 255, 0.8);
             margin-bottom: 0.3rem;
         }
 
         .entry-date {
             font-size: 0.9rem;
-            color: var(--text-light);
-            background-color: white;
+            color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(0, 0, 0, 0.2);
             padding: 0.3rem 0.8rem;
             border-radius: 12px;
             white-space: nowrap;
         }
 
         .entry-description {
-            color: var(--text-dark);
+            color: rgba(255, 255, 255, 0.85);
             margin-top: 0.8rem;
         }
 
@@ -272,7 +256,7 @@
             padding-left: 1.5rem;
             margin-bottom: 0.6rem;
             position: relative;
-            color: var(--text-dark);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.5;
         }
 
@@ -287,7 +271,7 @@
 
         .gpa {
             font-weight: 600;
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
 
         /* Skills Section */
@@ -299,14 +283,15 @@
         }
 
         .skill-category {
-            background-color: var(--light-bg);
+            background-color: rgba(30, 41, 59, 0.7);
             padding: 1.5rem;
             border-radius: 8px;
             border-top: 3px solid var(--accent-color);
+            backdrop-filter: blur(10px);
         }
 
         .skill-category h4 {
-            color: var(--primary-color);
+            color: var(--accent-color);
             margin-bottom: 1rem;
             font-size: 1.1rem;
             font-weight: 700;
@@ -320,18 +305,18 @@
         }
 
         .skill-item {
-            background-color: white;
+            background-color: rgba(0, 168, 232, 0.15);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             border: 1px solid var(--accent-color);
-            color: var(--secondary-color);
+            color: var(--accent-color);
             font-size: 0.9rem;
             font-weight: 500;
         }
 
         /* Awards Section */
         .award {
-            background-color: #fffbea;
+            background-color: rgba(255, 193, 7, 0.1);
             border-left: 4px solid #ffc107;
             padding: 1rem 1.5rem;
             border-radius: 0 4px 4px 0;
@@ -340,13 +325,13 @@
 
         .award-title {
             font-weight: 700;
-            color: var(--text-dark);
+            color: rgba(255, 255, 255, 0.95);
             margin-bottom: 0.3rem;
         }
 
         .award-date {
             font-size: 0.9rem;
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* Responsive Design */
@@ -372,7 +357,7 @@
 
             .nav-left {
                 width: 100%;
-                border-bottom: 1px solid var(--border-color);
+                border-bottom: 1px solid rgba(0, 168, 232, 0.2);
             }
 
             .nav-right {
@@ -436,7 +421,6 @@
         <div class="nav-tabs">
             <div class="nav-left">
                 <button class="tab-btn nav-home active" onclick="switchTab(event, 'home')">Home</button>
-                <button class="tab-btn" onclick="switchTab(event, 'about')">About</button>
             </div>
             <div class="nav-right">
                 <button class="tab-btn" onclick="switchTab(event, 'academic')">Education</button>
@@ -451,24 +435,19 @@
     <div class="container">
         <!-- HOME TAB -->
         <div id="home" class="tab-content active">
-            <div class="section" style="text-align: center; padding: 3rem 2rem;">
-                <h2 class="section-title" style="border: none; color: var(--secondary-color); font-size: 2.2rem; margin-bottom: 1.5rem;">Welcome</h2>
-                <p style="font-size: 1.1rem; color: var(--text-dark); line-height: 1.8; max-width: 600px; margin: 0 auto;">
-                    I'm an incoming Ph.D. in Operations Research at Virginia Tech passionate about machine learning, time series analysis, and optimization. 
-                    I previously worked as a Data Scientist at AT&T, and completed my undergraduate degrees in Data Science and Economics.
+            <div style="background: linear-gradient(135deg, #0f3a6b 0%, #1a5c96 30%, #2d7fbd 60%, #1a4d7f 100%); border-radius: 12px; padding: 4rem 3rem; margin-bottom: 2rem; color: white; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">Hi, I'm Guhan Sivakumar</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.95); max-width: 700px;">
+                    Data Scientist & Researcher
                 </p>
-                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <button class="tab-btn" onclick="switchTab(event, 'about')" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border: none; padding: 0.8rem 2rem; border-radius: 4px; cursor: pointer; font-weight: 600; text-transform: none;">Learn More About Me</button>
-                    <button class="tab-btn" onclick="switchTab(event, 'research')" style="background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); padding: 0.8rem 2rem; border-radius: 4px; cursor: pointer; font-weight: 600; text-transform: none;">View My Research</button>
-                </div>
+                <p style="font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; max-width: 700px; color: rgba(255, 255, 255, 0.9);">
+                    I'm passionate about machine learning, time series analysis, and optimization. Currently pursuing a Ph.D. in Operations Research at Virginia Tech. I have experience spanning cutting-edge research projects and impactful industry roles at AT&T, where I've applied advanced analytics to solve real-world problems.
+                </p>
             </div>
-        </div>
 
-        <!-- ABOUT TAB -->
-        <div id="about" class="tab-content">
             <div class="section">
                 <h2 class="section-title">About Me</h2>
-                <div class="entry" style="border-left-color: var(--secondary-color);">
+                <div class="entry" style="border-left-color: var(--accent-color);">
                     <div class="entry-description">
                         <p style="margin-bottom: 1rem;">
                             I'm a Data Scientist with a strong foundation in statistics, machine learning, and optimization. My journey has taken me through cutting-edge research projects and impactful industry roles where I've applied advanced analytics to solve real-world problems.
@@ -479,6 +458,9 @@
                         <p style="margin-bottom: 1rem;">
                             What drives me is the intersection of theory and practice—taking complex mathematical concepts and translating them into practical solutions. I'm particularly interested in reinforcement learning, optimization algorithms, and how machine learning can inform better decision-making.
                         </p>
+                        <p>
+                            When I'm not working on data, you can find me exploring new machine learning techniques, contributing to open-source projects, or thinking about the next big problem to solve.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -488,27 +470,27 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
                     <div class="entry" style="border-left-color: #ffc107;">
                         <div class="entry-description">
-                            <p style="font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-color);">📧 Email</p>
+                            <p style="font-weight: 700; margin-bottom: 0.5rem; color: #ffc107;">📧 Email</p>
                             <p><a href="mailto:guhans03@gmail.com" style="color: var(--accent-color); text-decoration: none;">guhans03@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="entry" style="border-left-color: #17a2b8;">
                         <div class="entry-description">
-                            <p style="font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-color);">📱 Phone</p>
+                            <p style="font-weight: 700; margin-bottom: 0.5rem; color: #17a2b8;">📱 Phone</p>
                             <p>(214) 799-7215</p>
                         </div>
                     </div>
                     <div class="entry" style="border-left-color: #28a745;">
                         <div class="entry-description">
-                            <p style="font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-color);">📍 Location</p>
+                            <p style="font-weight: 700; margin-bottom: 0.5rem; color: #28a745;">📍 Location</p>
                             <p>Dallas, TX</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://github.com/gs1803" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background-color: var(--light-bg); color: var(--text-dark); text-decoration: none; border-radius: 6px; border: 1px solid var(--border-color); transition: all 0.3s ease; font-weight: 600;" onmouseover="this.style.borderColor='var(--accent-color)'; this.style.color='var(--accent-color)';" onmouseout="this.style.borderColor='var(--border-color)'; this.style.color='var(--text-dark)';">GitHub</a>
-                    <a href="https://linkedin.com/in/guhan-siva" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background-color: var(--light-bg); color: var(--text-dark); text-decoration: none; border-radius: 6px; border: 1px solid var(--border-color); transition: all 0.3s ease; font-weight: 600;" onmouseover="this.style.borderColor='var(--accent-color)'; this.style.color='var(--accent-color)';" onmouseout="this.style.borderColor='var(--border-color)'; this.style.color='var(--text-dark)';">LinkedIn</a>
+                    <a href="https://github.com/gs1803" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background-color: rgba(0, 168, 232, 0.15); color: var(--accent-color); text-decoration: none; border-radius: 6px; border: 1px solid var(--accent-color); transition: all 0.3s ease; font-weight: 600;" onmouseover="this.style.backgroundColor='rgba(0, 168, 232, 0.25)'; this.style.boxShadow='0 0 15px rgba(0, 168, 232, 0.3)';" onmouseout="this.style.backgroundColor='rgba(0, 168, 232, 0.15)'; this.style.boxShadow='none';">GitHub</a>
+                    <a href="https://linkedin.com/in/guhan-siva" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background-color: rgba(0, 168, 232, 0.15); color: var(--accent-color); text-decoration: none; border-radius: 6px; border: 1px solid var(--accent-color); transition: all 0.3s ease; font-weight: 600;" onmouseover="this.style.backgroundColor='rgba(0, 168, 232, 0.25)'; this.style.boxShadow='0 0 15px rgba(0, 168, 232, 0.3)';" onmouseout="this.style.backgroundColor='rgba(0, 168, 232, 0.15)'; this.style.boxShadow='none';">LinkedIn</a>
                 </div>
             </div>
         </div>

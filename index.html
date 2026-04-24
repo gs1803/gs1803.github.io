@@ -30,40 +30,65 @@
 
         /* Header Section */
         header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, #0f2b45 0%, #1a3a52 25%, #2d5f8d 75%, #1a3a52 100%);
             color: white;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 20% 50%, rgba(0, 168, 232, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 50%, rgba(45, 95, 141, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        header > * {
+            position: relative;
+            z-index: 1;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.8px;
+            background: linear-gradient(180deg, #ffffff 0%, #e8f4f8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         header .subtitle {
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            color: #00d4ff;
+            margin-bottom: 2rem;
             font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
             font-size: 0.95rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            backdrop-filter: blur(5px);
         }
 
         .contact-item a {
@@ -73,56 +98,72 @@
         }
 
         .contact-item a:hover {
-            color: var(--accent-color);
+            color: #00d4ff;
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
             flex-wrap: wrap;
         }
 
         .social-links a {
             color: #e8f4f8;
             text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.4rem 0.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.2rem;
+            border: 1.5px solid rgba(0, 212, 255, 0.4);
+            border-radius: 25px;
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
 
         .social-links a:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
+            background-color: rgba(0, 168, 232, 0.2);
+            border-color: #00d4ff;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
         }
 
         /* Navigation Tabs */
         .nav-container {
-            background-color: var(--light-bg);
-            border-bottom: 2px solid var(--border-color);
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
         }
 
         .nav-tabs {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
             gap: 0;
             max-width: 1200px;
             margin: 0 auto;
-            flex-wrap: wrap;
-            padding: 0 1rem;
+            padding: 0 2rem;
+            height: 70px;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 0;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 0;
         }
 
         .nav-tabs button {
             background: none;
             border: none;
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
+            padding: 0.8rem 1.2rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--text-light);
             cursor: pointer;
@@ -130,17 +171,27 @@
             border-bottom: 3px solid transparent;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .nav-tabs button:hover {
-            color: var(--text-dark);
+            color: var(--secondary-color);
             background-color: rgba(0, 168, 232, 0.05);
         }
 
         .nav-tabs button.active {
             color: var(--accent-color);
             border-bottom-color: var(--accent-color);
+        }
+
+        .nav-tabs button.nav-home {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        .nav-tabs button.nav-home:hover {
+            color: var(--secondary-color);
         }
 
         /* Main Content */
@@ -336,13 +387,26 @@
             }
 
             .nav-tabs {
-                gap: 0;
-                padding: 0 0.5rem;
+                flex-direction: column;
+                height: auto;
+                padding: 0;
+            }
+
+            .nav-left {
+                width: 100%;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-right {
+                width: 100%;
+                flex-wrap: wrap;
             }
 
             .nav-tabs button {
                 padding: 0.8rem 1rem;
-                font-size: 0.8rem;
+                font-size: 0.75rem;
+                flex: 1;
+                min-width: 100px;
             }
 
             .container {
@@ -407,17 +471,61 @@
     <!-- Navigation -->
     <div class="nav-container">
         <div class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab(event, 'academic')">Academic</button>
-            <button class="tab-btn" onclick="switchTab(event, 'research')">Research</button>
-            <button class="tab-btn" onclick="switchTab(event, 'work')">Work Experience</button>
-            <button class="tab-btn" onclick="switchTab(event, 'skills')">Skills</button>
+            <div class="nav-left">
+                <button class="tab-btn nav-home active" onclick="switchTab(event, 'home')">Home</button>
+                <button class="tab-btn" onclick="switchTab(event, 'about')">About</button>
+            </div>
+            <div class="nav-right">
+                <button class="tab-btn" onclick="switchTab(event, 'academic')">Education</button>
+                <button class="tab-btn" onclick="switchTab(event, 'research')">Research</button>
+                <button class="tab-btn" onclick="switchTab(event, 'work')">Work Experience</button>
+                <button class="tab-btn" onclick="switchTab(event, 'skills')">Skills</button>
+            </div>
         </div>
     </div>
 
     <!-- Main Content -->
     <div class="container">
+        <!-- HOME TAB -->
+        <div id="home" class="tab-content active">
+            <div class="section" style="text-align: center; padding: 3rem 2rem;">
+                <h2 class="section-title" style="border: none; color: var(--secondary-color); font-size: 2.2rem; margin-bottom: 1.5rem;">Welcome</h2>
+                <p style="font-size: 1.1rem; color: var(--text-dark); line-height: 1.8; max-width: 600px; margin: 0 auto;">
+                    I'm a Data Scientist and Researcher passionate about machine learning, time series analysis, and optimization. 
+                    Currently pursuing a Ph.D. in Operations Research at Virginia Tech with experience spanning industry and academia.
+                </p>
+                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <button class="tab-btn" onclick="switchTab(event, 'about')" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border: none; padding: 0.8rem 2rem; border-radius: 4px; cursor: pointer; font-weight: 600; text-transform: none;">Learn More About Me</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'research')" style="background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); padding: 0.8rem 2rem; border-radius: 4px; cursor: pointer; font-weight: 600; text-transform: none;">View My Research</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT TAB -->
+        <div id="about" class="tab-content">
+            <div class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="entry" style="border-left-color: var(--secondary-color);">
+                    <div class="entry-description">
+                        <p style="margin-bottom: 1rem;">
+                            I'm a Data Scientist with a strong foundation in statistics, machine learning, and optimization. My journey has taken me through cutting-edge research projects and impactful industry roles where I've applied advanced analytics to solve real-world problems.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            At AT&T, I designed forecasting models and developed semantic query engines that have generated millions in cost savings. In my research, I've worked on plasma event detection using deep learning, causal inference analysis, and time series forecasting models.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            What drives me is the intersection of theory and practice—taking complex mathematical concepts and translating them into practical solutions. I'm particularly interested in reinforcement learning, optimization algorithms, and how machine learning can inform better decision-making.
+                        </p>
+                        <p>
+                            When I'm not working on data, you can find me exploring new machine learning techniques, contributing to open-source projects, or thinking about the next big problem to solve.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- ACADEMIC TAB -->
-        <div id="academic" class="tab-content active">
+        <div id="academic" class="tab-content">
             <div class="section">
                 <h2 class="section-title">Education</h2>
 

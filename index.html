@@ -366,19 +366,65 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-tabs { flex-direction: column; height: auto; padding: 0; }
-            .nav-left { width: 100%; border-bottom: 1px solid rgba(0, 168, 232, 0.2); }
-            .nav-right { width: 100%; flex-wrap: wrap; }
-            .nav-tabs button { padding: 0.8rem 1rem; font-size: 0.75rem; flex: 1; min-width: 100px; }
+            /* Nav: stack HOME on top, then 4 tabs below */
+            .nav-tabs {
+                flex-direction: column;
+                height: auto;
+                padding: 0;
+                gap: 0;
+            }
+
+            .nav-left {
+                width: 100%;
+                justify-content: center;
+                border-bottom: 1px solid rgba(0, 168, 232, 0.2);
+            }
+
+            .nav-left .nav-home {
+                width: 100%;
+                text-align: center;
+                padding: 0.9rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .nav-right {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+                border-bottom: none;
+            }
+
+            .nav-right .tab-btn {
+                padding: 0.7rem 0.3rem;
+                font-size: 0.65rem;
+                text-align: center;
+                flex: none;
+                width: 100%;
+                letter-spacing: 0.2px;
+            }
+
+            /* Hero */
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-right h2 {
+                font-size: 1.6rem;
+                white-space: normal; /* fix overflow */
+            }
+
+            .hero-about {
+                font-size: 0.97rem;
+                max-width: none;
+            }
+
+            /* Entries */
             .container { padding: 1rem; }
             .entry-header { flex-direction: column; }
             .entry-date { align-self: flex-start; }
             .skills-grid { grid-template-columns: 1fr; }
             .section-title { font-size: 1.4rem; }
             .entry-title { font-size: 1.1rem; }
-            .hero-grid { grid-template-columns: 1fr; }
-            .hero-right h2 { font-size: 2rem; }
-            .hero-about { max-width: none; }
         }
 
         @media print {

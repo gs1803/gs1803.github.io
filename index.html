@@ -280,10 +280,22 @@
             color: rgba(255, 255, 255, 0.95);
         }
 
-        .entry-subtitle {
+        .entry-subtitle, .entry-location {
             font-style: italic;
             color: rgba(0, 212, 255, 0.8);
             margin-bottom: 0.3rem;
+            transform: translateY(5px);
+        }
+
+        .entry-meta {
+            text-align: right;
+        }
+
+        .entry-location {
+            font-style: italic;
+            color: rgba(0, 212, 255, 0.8);
+            padding: 0.3rem 0.8rem;
+            margin-top: -0.45rem;
         }
 
         .entry-date {
@@ -481,7 +493,7 @@
             <div class="nav-right">
                 <button class="tab-btn" onclick="switchTab(event, 'academic')">Education</button>
                 <button class="tab-btn" onclick="switchTab(event, 'research')">Research</button>
-                <button class="tab-btn" onclick="switchTab(event, 'work')">Work Experience</button>
+                <button class="tab-btn" onclick="switchTab(event, 'experience')">Experience</button>
                 <button class="tab-btn" onclick="switchTab(event, 'skills')">Skills</button>
             </div>
         </div>
@@ -524,13 +536,10 @@
                     <div>
                         <h2>Hi, I'm Guhan Sivakumar</h2>
                         <p class="hero-about">
-                            I'm passionate about machine learning, time series analysis, and optimization. Currently working at AT&T and incoming Ph.D. Operations Research candidate at Virginia Tech. I have experience spanning cutting-edge research projects and impactful industry roles, where I've applied advanced analytics to solve real-world problems.
+                            I'm currently a Ph.D. Operations Research candidate at Virginia Tech. I previously worked at AT&T as a Data Scientist on the financial data platform team.  
                         </p>
                         <p class="hero-about">
-                            My work blends research and applied analytics: building forecasting systems, causal models, and scalable pipelines that drive business decisions. I enjoy turning complex data into clear insights, optimizing processes with rigorous models, and creating solutions that work in production.
-                        </p>
-                        <p class="hero-about">
-                            Outside of work, I explore new machine learning techniques, contribute to open-source tools, and look for the next challenging problem to solve.
+                            My research interests are in stochastic approximation theory, optimization, non-stationary and continual reinforcement learning, and applications in finance and energy grids.
                         </p>
                     </div>
                 </div>
@@ -548,8 +557,14 @@
                             <div class="entry-title">Ph.D. in Operations Research</div>
                             <div class="entry-subtitle">Virginia Polytechnic Institute and State University</div>
                         </div>
-                        <div class="entry-date">Aug 2026 – May 2031</div>
+                        <div class="entry-date">Aug 2026 – Present</div>
                     </div>
+                    <div class="entry-description">
+                        <p><span class="gpa">GPA: 4.00/4.00</span></p>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Mathematical Optimization for ML, Optimization: Linear Programming, Bayesian Statistics</li>
+                    </ul>
                 </div>
 
                 <div class="entry">
@@ -564,8 +579,8 @@
                         <p><span class="gpa">GPA: 3.85/4.00</span></p>
                     </div>
                     <ul class="bullet-list">
-                        <li>Machine Learning, Probability, Statistical Learning, Real Analysis I, Mathematical Statistics</li>
-                        <li>Game Theory, PhD Econometrics I, PhD Macroeconomics Theory I, Forecasting, Monetary Economics</li>
+                        <li>Machine Learning, Probability, Statistical Learning, Real Analysis I-II, Mathematical Statistics</li>
+                        <li>PhD Econometrics I, PhD Macroeconomics Theory I, Game Theory, Forecasting, Monetary Economics</li>
                         <li>Big Data, Deep Learning, Database Systems, Data Structures and Algorithms</li>
                     </ul>
                 </div>
@@ -574,12 +589,20 @@
             <div class="section">
                 <h2 class="section-title">Awards & Recognition</h2>
                 <div class="award">
-                    <div class="award-title">Grado Department Fellowship</div>
+                    <div class="award-title">Rehmert-Nachlas Graduate Fellowship</div>
                     <div class="award-date">2026 – Present</div>
                 </div>
                 <div class="award">
-                    <div class="award-title">Dean's List (3x)</div>
-                    <div class="award-date">2021 – 2025</div>
+                    <div class="award-title">Dean's List (2x)</div>
+                    <div class="award-date">2024</div>
+                </div>
+                <div class="award">
+                    <div class="award-title">Top 9, ASA DataFest</div>
+                    <div class="award-date">2024</div>
+                </div>
+                <div class="award">
+                    <div class="award-title">2nd Place, Statefarm Coding Competition</div>
+                    <div class="award-date">2023</div>
                 </div>
                 <div class="award">
                     <div class="award-title">Academic Excellence Scholarship</div>
@@ -596,61 +619,70 @@
                 <div class="entry">
                     <div class="entry-header">
                         <div>
-                            <div class="entry-title">Undergraduate Researcher</div>
-                            <div class="entry-subtitle">UT Dallas & Drexel University, Richardson, TX</div>
+                            <div class="entry-title">Graduate Researcher</div>
+                            <div class="entry-subtitle">Virginia Tech</div>
                         </div>
-                        <div class="entry-date">Jan 2025 – Jun 2025</div>
+                        <div class="entry-meta">
+                            <div class="entry-date">August 2026 - Present</div>
+                            <div class="entry-location">Blacksburg, VA</div>
+                        </div>
                     </div>
                     <div class="entry-description">
-                        <p><strong>Plasma Event Detection & Time Series Classification</strong></p>
+                        <p><strong>Stochastic Approximation and Reinforcement Learning Theory</strong></p>
                     </div>
-                    <ul class="bullet-list">
-                        <li>Collaborated with professors and 3 peers to detect high-velocity plasma events from magnetic field structures in Earth's magnetosphere using 60M rows of data from NASA THEMIS Missions</li>
-                        <li>Designed TimeSeqNet, a custom deep learning architecture for time series sequence classification, and engineered features using GARCH volatilities, achieving 84% accuracy with strong generalization</li>
-                        <li>Built scalable, memory-efficient data pipelines using generator functions and vectorization, reducing memory usage by 86%</li>
-                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Undergraduate Researcher</div>
+                            <div class="entry-subtitle">UT Dallas & Drexel University</div>
+                        </div>
+                        <div class="entry-meta">
+                            <div class="entry-date">January 2025 – June 2025</div>
+                            <div class="entry-location">Richardson, TX</div>
+                        </div>
+                    </div>
+                    <div class="entry-description">
+                        <p><strong>Plasma Event Detection and Time Series Classification</strong></p>
+                    </div>
                 </div>
 
                 <div class="entry">
                     <div class="entry-header">
                         <div>
                             <div class="entry-title">Research Assistant</div>
-                            <div class="entry-subtitle">UT Dallas, Richardson, TX</div>
+                            <div class="entry-subtitle">UT Dallas</div>
                         </div>
-                        <div class="entry-date">Sep 2024 – May 2025</div>
+                        <div class="entry-meta">
+                            <div class="entry-date">September 2024 - May 2025</div>
+                            <div class="entry-location">Richardson, TX</div>
+                        </div>
                     </div>
                     <div class="entry-description">
-                        <p><strong>Corporate Social Responsibility & Causal Analysis</strong></p>
+                        <p><strong>Corporate Social Responsibility and Causal Analysis</strong></p>
                     </div>
-                    <ul class="bullet-list">
-                        <li>Worked with Dr. June Huang to analyze the causal effect of Corporate Social Responsibility (CSR) announcements as political contributions, using difference-in-differences and fixed effects models</li>
-                        <li>Preprocessed unstructured text data from 197,300 news articles and 86,800 press releases with PySpark for causal analysis</li>
-                        <li>Generated Universal Sentence Encoder embeddings, extracting named entities and dollar amounts in 14% of press releases</li>
-                        <li>Applied TF-IDF and cosine similarity to measure the relevance of local news articles to firm-specific CSR press releases</li>
-                    </ul>
                 </div>
 
                 <div class="entry">
                     <div class="entry-header">
                         <div>
                             <div class="entry-title">Undergraduate Researcher</div>
-                            <div class="entry-subtitle">UT Dallas, Richardson, TX</div>
+                            <div class="entry-subtitle">UT Dallas</div>
                         </div>
-                        <div class="entry-date">Nov 2023 – May 2024</div>
+                        <div class="entry-meta">
+                            <div class="entry-date">November 2023 – May 2024</div>
+                            <div class="entry-location">Richardson, TX</div>
+                        </div>
                     </div>
                     <div class="entry-description">
                         <p><strong>CPI Inflation Forecasting with HMM-LSTM Fusion</strong></p>
                     </div>
-                    <ul class="bullet-list">
-                        <li>Created an advanced forecasting model for CPI Inflation by combining an HMM and LSTM model, obtaining an in-sample R² of 0.792 and a MAPE of 13.3% on reliable long-term future forecasts</li>
-                        <li>Conducted in-sample forecasting with forward-chaining cross-validation to validate the model's robustness over time</li>
-                        <li>Enhanced model interpretability with Integrated Gradients for feature importance, and presented the findings in a paper</li>
-                    </ul>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Publications & Presentations</h2>
+                <h2 class="section-title">Papers & Presentations</h2>
                 <div class="entry">
                     <div class="entry-description">
                         <p><strong>Sivakumar, G., et al. (2025).</strong> Fast-Ion Flow Event Detection in Earth's Magnetosphere. <em>Poster Presentation - UTDiscovery Day.</em></p>
@@ -664,56 +696,93 @@
             </div>
         </div>
 
-        <!-- WORK EXPERIENCE TAB -->
-        <div id="work" class="tab-content">
+        <!-- EXPERIENCE TAB -->
+        <div id="experience" class="tab-content">
             <div class="section">
-                <h2 class="section-title">Professional Experience</h2>
+                <h2 class="section-title">Work Experience</h2>
 
                 <div class="entry">
                     <div class="entry-header">
                         <div>
                             <div class="entry-title">Data Scientist I</div>
-                            <div class="entry-subtitle">AT&T, Dallas, TX</div>
+                            <div class="entry-subtitle">AT&T</div>
                         </div>
-                        <div class="entry-date">Jul 2025 – Jul 2026</div>
+                        <div class="entry-meta">
+                            <div class="entry-date">July 2025 – July 2026</div>
+                            <div class="entry-location">Dallas, TX</div>
+                        </div>
                     </div>
-                    <ul class="bullet-list">
-                        <li>Designed a gradient boosted dynamic panel revenue forecasting model with CatBoost on 650M+ rows in Databricks, achieving a 12.8% WAPE and identifying $3.12M in annual cost savings</li>
-                        <li>Achieved a 70% WAPE reduction over the existing model in backtests with stable forecasts across several FP&A horizons</li>
-                        <li>Developed a scalable semantic query engine with RAG that translates natural language into SQL, improving data retrieval efficiency by 87% while ensuring SOX compliance and privacy</li>
-                        <li>Optimized SSMS partition refreshes and VM-based job scheduling, saving 20+ hours of monitoring during data migrations</li>
-                    </ul>
+                    <div class="entry-description">
+                        <p><strong>Financial Data Platforms: Revenue Forecasting and Chatbots</strong></p>
+                    </div>
                 </div>
 
                 <div class="entry">
                     <div class="entry-header">
                         <div>
                             <div class="entry-title">Data Science Intern</div>
-                            <div class="entry-subtitle">GoFi - DriveTime, Dallas, TX</div>
+                            <div class="entry-subtitle">GoFi - DriveTime</div>
                         </div>
-                        <div class="entry-date">May 2024 – Aug 2024</div>
+                        <div class="entry-meta">
+                            <div class="entry-date">May 2024 – Aug 2024</div>
+                            <div class="entry-location">Dallas, TX</div>
+                        </div>
                     </div>
-                    <ul class="bullet-list">
-                        <li>Enhanced pricing programs by expanding customer segments from 2 to 6, enabling targeted risk-based pricing strategies</li>
-                        <li>Reduced feature space from 106 to 38 with hierarchical clustering and created a K-Means model to identify new segments</li>
-                        <li>Designed and optimized a custom Decision Tree from scratch for interpreting K-Means results, obtaining 93.6% accuracy</li>
-                        <li>Improved overall loss expectation accuracy by 15.74% and reduced costs by 8.31%, lowering financial risk exposure</li>
-                    </ul>
+                    <div class="entry-description">
+                        <p><strong>Pricing: Customer Segmentation</strong></p>
+                    </div>
                 </div>
 
                 <div class="entry">
                     <div class="entry-header">
                         <div>
                             <div class="entry-title">Data Science Intern</div>
-                            <div class="entry-subtitle">Samirian Chemicals, Remote</div>
+                            <div class="entry-subtitle">Samirian Chemicals</div>
                         </div>
-                        <div class="entry-date">Sep 2022 – Jun 2023</div>
+                        <div class="entry-meta">
+                            <div class="entry-date">September 2022 – June 2023</div>
+                            <div class="entry-location">Remote</div>
+                        </div>
                     </div>
-                    <ul class="bullet-list">
-                        <li>Developed Azure SQL databases from local Excel files with Microsoft Fabric and provisioned ETL data pipelines using Python, PowerQuery, and SQL, integrating with existing dashboards</li>
-                        <li>Analyzed market trends and prices of various chemicals using PowerBI dashboards, boosting sales performance by 12%</li>
-                        <li>Predicted pricing of chemicals with 77% forecast accuracy based on price trends, competitor pricing, and market data</li>
-                    </ul>
+                    <div class="entry-description">
+                        <p><strong>IT and Sales: Price Forecasting and ETL Pipelines</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Teaching Experience</h2>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">Graduate Teaching Assistant</div>
+                            <div class="entry-subtitle">Virginia Tech</div>
+                        </div>
+                        <div class="entry-meta">
+                            <div class="entry-date">August 2026 - Present</div>
+                            <div class="entry-location">Blacksburg, VA</div>
+                        </div>
+                    </div>
+                    <div class="entry-description">
+                        <p><strong>Manufacturing and Engineering Lab</strong></p>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <div class="entry-title">TDP Impact Lead</div>
+                            <div class="entry-subtitle">AT&T</div>
+                        </div>
+                        <div class="entry-meta">
+                            <div class="entry-date">September 2025 - April 2026</div>
+                            <div class="entry-location">Dallas, TX</div>
+                        </div>
+                    </div>
+                    <div class="entry-description">
+                        <p><strong>Interviews, Workshops, and TDP Impact</strong></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -723,6 +792,19 @@
             <div class="section">
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Methodologies & Domains</h4>
+                        <ul class="skill-list">
+                            <li class="skill-item">Machine Learning</li>
+                            <li class="skill-item">Time Series</li>
+                            <li class="skill-item">Deep Learning</li>
+                            <li class="skill-item">Causal Inference</li>
+                            <li class="skill-item">NLP</li>
+                            <li class="skill-item">Data Pipeline</li>
+                            <li class="skill-item">Optimization</li>
+                            <li class="skill-item">Statistical Analysis</li>
+                        </ul>
+                    </div>
                     <div class="skill-category">
                         <h4>Languages & Libraries</h4>
                         <ul class="skill-list">
@@ -749,19 +831,6 @@
                             <li class="skill-item">MySQL</li>
                             <li class="skill-item">GitHub</li>
                             <li class="skill-item">Linux</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Methodologies & Domains</h4>
-                        <ul class="skill-list">
-                            <li class="skill-item">Machine Learning</li>
-                            <li class="skill-item">Time Series</li>
-                            <li class="skill-item">Deep Learning</li>
-                            <li class="skill-item">Causal Inference</li>
-                            <li class="skill-item">NLP</li>
-                            <li class="skill-item">Data Pipeline</li>
-                            <li class="skill-item">Optimization</li>
-                            <li class="skill-item">Statistical Analysis</li>
                         </ul>
                     </div>
                 </div>
